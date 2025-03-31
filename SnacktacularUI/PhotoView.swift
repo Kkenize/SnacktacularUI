@@ -11,7 +11,7 @@ import PhotosUI
 struct PhotoView: View {
     @State var spot: Spot
     @State private var selectedPhoto: PhotosPickerItem?
-    @State private var pickerIsPresented = false
+    @State private var pickerIsPresented = true
     @State private var selectedImage = Image(systemName: "photo")
     @Environment(\.dismiss) private var dismiss
     

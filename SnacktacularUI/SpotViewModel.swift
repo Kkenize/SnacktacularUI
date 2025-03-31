@@ -25,7 +25,7 @@ class SpotViewModel {
             }
         } else {
             do {
-                let docRef = try db.collection("spot").addDocument(from: spot)
+                let docRef = try db.collection("spots").addDocument(from: spot)
                 print("🐣 Data added successfully!")
                 return docRef.documentID
             } catch {
