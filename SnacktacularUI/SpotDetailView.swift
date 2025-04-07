@@ -6,13 +6,25 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 struct SpotDetailView: View {
+    @FirestoreQuery(collectionPath: "spots") var fsPhotos: [Photo]
     @State var spot: Spot
     @State private var photoSheetIsPresented = false
-    @State private var showingAlert = false
+    @State private var showingAlert = false //alert if the user need to save spot before adding a photo
     @State private var alertMessage = "Cannot add a photo until you save the Spot."
     @Environment(\.dismiss) private var dismiss
+    private var photos: [Photo] {
+        //If running in Preview then show mock data
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            return [Photo.preview, Photo.preview, Photo.preview, Photo.preview, Photo.preview, Photo.preview]
+        }
+        
+        // Else show Firebase Data
+        return fsPhotos
+    }
     
     var body: some View {
         VStack {
@@ -46,9 +58,30 @@ struct SpotDetailView: View {
             .buttonStyle(.borderedProminent)
             .tint(.snack)
             
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(photos) { photo in
+                        let url = URL(string: photo.imageURLString)
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                                .clipped()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                    }
+                }
+            }
+            .frame(height: 80)
+            
             Spacer()
         }
         .navigationBarBackButtonHidden()
+        .task {
+            $fsPhotos.path = "spots/\(spot.id ?? "")/photos"
+        }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") {
@@ -97,6 +130,6 @@ struct SpotDetailView: View {
 
 #Preview {
     NavigationStack {
-        SpotDetailView(spot: Spot())
+        SpotDetailView(spot: Spot.preview)
     }
 }

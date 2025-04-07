@@ -17,6 +17,8 @@
 		F1CC79B72D9A7638009BDA70 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC79B62D9A7638009BDA70 /* SpotDetailView.swift */; };
 		F1CC79B92D9A780C009BDA70 /* SpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC79B82D9A780C009BDA70 /* SpotViewModel.swift */; };
 		F1CC79BD2D9A8E2D009BDA70 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC79BC2D9A8E2D009BDA70 /* PhotoView.swift */; };
+		F1CC7A372DA371EB009BDA70 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7A362DA371EB009BDA70 /* Photo.swift */; };
+		F1CC7A392DA37310009BDA70 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7A382DA37310009BDA70 /* PhotoViewModel.swift */; };
 		F1E39E822D9A31B900DF6932 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1E39E812D9A31B900DF6932 /* FirebaseAuth */; };
 		F1E39E842D9A31B900DF6932 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F1E39E832D9A31B900DF6932 /* FirebaseFirestore */; };
 		F1E39E862D9A31B900DF6932 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F1E39E852D9A31B900DF6932 /* FirebaseStorage */; };
@@ -34,6 +36,8 @@
 		F1CC79B62D9A7638009BDA70 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
 		F1CC79B82D9A780C009BDA70 /* SpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewModel.swift; sourceTree = "<group>"; };
 		F1CC79BC2D9A8E2D009BDA70 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		F1CC7A362DA371EB009BDA70 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		F1CC7A382DA37310009BDA70 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		F1E39E6D2D99FCB200DF6932 /* SnacktacularUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacktacularUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,12 +67,14 @@
 			isa = PBXGroup;
 			children = (
 				F1CC79A82D9A3406009BDA70 /* SnacktacularUIApp.swift */,
+				F1CC79B42D9A7526009BDA70 /* Spot.swift */,
+				F1CC7A362DA371EB009BDA70 /* Photo.swift */,
 				F1CC79A52D9A3406009BDA70 /* LoginView.swift */,
 				F1CC79B22D9A4713009BDA70 /* ListView.swift */,
 				F1CC79B62D9A7638009BDA70 /* SpotDetailView.swift */,
-				F1CC79B82D9A780C009BDA70 /* SpotViewModel.swift */,
 				F1CC79BC2D9A8E2D009BDA70 /* PhotoView.swift */,
-				F1CC79B42D9A7526009BDA70 /* Spot.swift */,
+				F1CC79B82D9A780C009BDA70 /* SpotViewModel.swift */,
+				F1CC7A382DA37310009BDA70 /* PhotoViewModel.swift */,
 				F1CC79A42D9A3406009BDA70 /* Assets.xcassets */,
 				F1CC79A72D9A3406009BDA70 /* Info.plist */,
 				F1CC79A62D9A3406009BDA70 /* GoogleService-Info.plist */,
@@ -173,9 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CC7A372DA371EB009BDA70 /* Photo.swift in Sources */,
 				F1CC79B72D9A7638009BDA70 /* SpotDetailView.swift in Sources */,
 				F1CC79AA2D9A3406009BDA70 /* LoginView.swift in Sources */,
 				F1CC79BD2D9A8E2D009BDA70 /* PhotoView.swift in Sources */,
+				F1CC7A392DA37310009BDA70 /* PhotoViewModel.swift in Sources */,
 				F1CC79B92D9A780C009BDA70 /* SpotViewModel.swift in Sources */,
 				F1CC79AB2D9A3406009BDA70 /* SnacktacularUIApp.swift in Sources */,
 				F1CC79B32D9A4713009BDA70 /* ListView.swift in Sources */,
